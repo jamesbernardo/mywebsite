@@ -1,0 +1,1254 @@
+<!DOCTYPE html><html lang="en"><head><meta name="x-poe-datastore-behavior" content="local_only"><meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' 'unsafe-eval' data: blob: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://code.jquery.com https://unpkg.com https://d3js.org https://threejs.org https://cdn.plot.ly https://stackpath.bootstrapcdn.com https://maps.googleapis.com https://cdn.tailwindcss.com https://ajax.googleapis.com https://kit.fontawesome.com https://cdn.datatables.net https://maxcdn.bootstrapcdn.com https://code.highcharts.com https://tako-static-assets-production.s3.amazonaws.com https://www.youtube.com https://fonts.googleapis.com https://fonts.gstatic.com https://pfst.cf2.poecdn.net https://puc.poecdn.net https://i.imgur.com https://wikimedia.org https://*.icons8.com https://*.giphy.com https://picsum.photos https://images.unsplash.com; frame-src 'self' https://www.youtube.com https://trytako.com; child-src 'self'; manifest-src 'self'; worker-src 'self'; upgrade-insecure-requests; block-all-mixed-content;">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>James Bernardo | Digital Transformation &amp; Product Strategy</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #000000;
+            --accent: #fe7e01;
+            --accent-hover: #e67001;
+            --text-primary: #1a1a1a;
+            --text-secondary: #666666;
+            --bg-light: #fafafa;
+            --border: #e0e0e0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'Segoe UI', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: white;
+            font-size: 16px;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Navigation */
+        nav {
+            border-bottom: 1px solid var(--border);
+            padding: 24px 0;
+            position: sticky;
+            top: 0;
+            background: white;
+            z-index: 100;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            text-decoration: none;
+        }
+
+        .logo-circle {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: var(--accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 18px;
+            color: white;
+            border: 2px solid var(--accent);
+            transition: all 0.3s ease;
+        }
+
+        .logo-section:hover .logo-circle {
+            background: white;
+            color: var(--accent);
+        }
+
+        .logo-img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .logo-text {
+            font-size: 18px;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            color: var(--primary);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-size: 14px;
+            transition: color 0.2s;
+            letter-spacing: 0.02em;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        /* Header */
+        header {
+            padding: 80px 0 60px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #particle-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .header-content {
+            max-width: 680px;
+            position: relative;
+            z-index: 1;
+        }
+
+        h1 {
+            font-size: 48px;
+            font-weight: 600;
+            margin-bottom: 24px;
+            color: var(--primary);
+            letter-spacing: -0.03em;
+            line-height: 1.1;
+        }
+
+        .tagline {
+            font-size: 18px;
+            color: var(--text-secondary);
+            margin-bottom: 32px;
+            line-height: 1.6;
+            font-weight: 400;
+        }
+
+        .intro {
+            font-size: 16px;
+            line-height: 1.7;
+            color: var(--text-primary);
+            margin-bottom: 40px;
+        }
+
+        .cta-section {
+            display: flex;
+            gap: 16px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 14px 32px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            display: inline-block;
+            font-size: 15px;
+            border: 1px solid var(--accent);
+            background: var(--accent);
+            color: white;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: var(--accent-hover);
+            border-color: var(--accent-hover);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: var(--accent);
+        }
+
+        .btn-secondary:hover {
+            background: var(--accent);
+            color: white;
+        }
+
+        .btn-outline {
+            background: white;
+            color: var(--text-secondary);
+            border-color: var(--border);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+            background: white;
+        }
+
+        /* Sections */
+        .section {
+            padding: 80px 0;
+            border-top: 1px solid var(--border);
+        }
+
+        .section-header {
+            margin-bottom: 48px;
+        }
+
+        .section-title {
+            font-size: 32px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            letter-spacing: -0.02em;
+        }
+
+        .section-subtitle {
+            font-size: 16px;
+            color: var(--text-secondary);
+            max-width: 600px;
+        }
+
+        .subsection {
+            margin-top: 80px;
+            position: relative;
+        }
+
+        .subsection:first-child {
+            margin-top: 0;
+        }
+
+        .subsection-title {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 24px;
+            letter-spacing: -0.02em;
+            color: var(--accent);
+        }
+
+        .subsection-subtitle {
+            font-size: 16px;
+            color: var(--text-secondary);
+            margin-bottom: 48px;
+            max-width: 600px;
+        }
+
+        /* Skills Grid */
+        .skills-list {
+            display: grid;
+            gap: 48px;
+        }
+
+        .skill-item {
+            display: grid;
+            grid-template-columns: 220px 1fr;
+            gap: 32px;
+            padding-bottom: 48px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .skill-item:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .skill-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .skill-description {
+            font-size: 16px;
+            line-height: 1.7;
+            color: var(--text-secondary);
+        }
+
+        /* Current Work Section */
+        .highlight-box {
+            background: var(--bg-light);
+            padding: 48px;
+            margin-top: 48px;
+        }
+
+        .highlight-box h3 {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            letter-spacing: -0.02em;
+        }
+
+        .highlight-box p {
+            font-size: 16px;
+            line-height: 1.7;
+            color: var(--text-secondary);
+            margin-bottom: 32px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+            margin-top: 40px;
+            padding-top: 32px;
+            border-top: 1px solid var(--border);
+        }
+
+        .stat-item {
+            text-align: left;
+        }
+
+        .stat-number {
+            font-size: 40px;
+            font-weight: 600;
+            color: var(--accent);
+            margin-bottom: 8px;
+            letter-spacing: -0.02em;
+        }
+
+        .stat-label {
+            color: var(--text-secondary);
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* Experience Timeline */
+        .timeline {
+            margin-top: 48px;
+        }
+
+        .timeline-item {
+            margin-bottom: 48px;
+            padding-left: 32px;
+            border-left: 2px solid var(--border);
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -6px;
+            top: 0;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--accent);
+        }
+
+        .timeline-year {
+            font-size: 14px;
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .timeline-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .timeline-subtitle {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+        }
+
+        .timeline-description {
+            font-size: 16px;
+            line-height: 1.7;
+            color: var(--text-secondary);
+        }
+
+        /* Projects Grid */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+            margin-top: 48px;
+        }
+
+        .project-card {
+            border: 1px solid var(--border);
+            padding: 32px;
+            text-decoration: none;
+            color: var(--text-primary);
+            transition: all 0.3s ease;
+            display: block;
+        }
+
+        .project-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(254, 126, 1, 0.1);
+        }
+
+        .project-category {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--accent);
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        .project-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--primary);
+        }
+
+        .project-description {
+            font-size: 14px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* Band List */
+        .band-list {
+            display: grid;
+            gap: 32px;
+        }
+
+        .band-item {
+            display: grid;
+            grid-template-columns: 240px 1fr;
+            gap: 32px;
+            align-items: start;
+        }
+
+        .band-name {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .band-details {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .band-type {
+            font-size: 14px;
+            color: var(--text-secondary);
+            font-style: italic;
+        }
+
+        .band-description {
+            font-size: 16px;
+            line-height: 1.7;
+            color: var(--text-secondary);
+        }
+
+        .band-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 8px;
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .band-link:hover {
+            color: var(--accent-hover);
+        }
+
+        .band-link svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        /* Sports Section */
+        .sports-grid {
+            display: grid;
+            gap: 32px;
+        }
+
+        .sport-item {
+            display: grid;
+            grid-template-columns: 240px 1fr;
+            gap: 32px;
+            padding-bottom: 32px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .sport-item:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .sport-name {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .sport-description {
+            font-size: 16px;
+            line-height: 1.7;
+            color: var(--text-secondary);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 16px;
+            margin-top: 48px;
+            padding-top: 32px;
+            border-top: 1px solid var(--border);
+            flex-wrap: wrap;
+        }
+
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            border: 1px solid var(--border);
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-size: 14px;
+            transition: all 0.2s ease;
+        }
+
+        .social-link:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        .social-icon {
+            width: 18px;
+            height: 18px;
+        }
+
+        /* Coffee CTA Section */
+        .coffee-cta {
+            background: linear-gradient(135deg, #fe7e01 0%, #ff9533 100%);
+            padding: 64px 48px;
+            text-align: center;
+            color: white;
+            margin-top: 80px;
+        }
+
+        .coffee-cta h2 {
+            font-size: 36px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            letter-spacing: -0.02em;
+        }
+
+        .coffee-cta p {
+            font-size: 18px;
+            margin-bottom: 32px;
+            opacity: 0.95;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .coffee-cta .btn {
+            background: white;
+            color: var(--accent);
+            border-color: white;
+        }
+
+        .coffee-cta .btn:hover {
+            background: rgba(255, 255, 255, 0.9);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 48px 0;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 24px;
+            list-style: none;
+        }
+
+        .footer-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+
+        .copyright {
+            color: var(--text-secondary);
+            font-size: 14px;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 16px;
+                align-items: flex-start;
+            }
+
+            .nav-links {
+                gap: 20px;
+                flex-wrap: wrap;
+            }
+
+            h1 {
+                font-size: 36px;
+            }
+
+            .tagline {
+                font-size: 16px;
+            }
+
+            .cta-section {
+                flex-direction: column;
+            }
+
+            .btn {
+                text-align: center;
+            }
+
+            .skill-item {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+
+            .highlight-box {
+                padding: 32px 24px;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .band-item,
+            .sport-item {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+
+            .social-links {
+                flex-direction: column;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                gap: 24px;
+                align-items: flex-start;
+            }
+
+            .section {
+                padding: 60px 0;
+            }
+
+            .subsection {
+                margin-top: 60px;
+            }
+
+            .timeline-item {
+                padding-left: 24px;
+            }
+
+            .coffee-cta {
+                padding: 48px 24px;
+            }
+
+            .coffee-cta h2 {
+                font-size: 28px;
+            }
+
+            .coffee-cta p {
+                font-size: 16px;
+            }
+        }
+
+        /* Animations */
+        @media (prefers-reduced-motion: no-preference) {
+            .fade-in {
+                opacity: 0;
+                animation: fadeIn 0.6s ease forwards;
+            }
+
+            @keyframes fadeIn {
+                to {
+                    opacity: 1;
+                }
+            }
+
+            .delay-1 { animation-delay: 0.1s; }
+            .delay-2 { animation-delay: 0.2s; }
+            .delay-3 { animation-delay: 0.3s; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="logo-section">
+                <div class="logo-circle" id="logo-container">
+                    <img src="logo.png" alt="JB" class="logo-img" id="logo-img" style="display: none;">
+                    <span id="logo-initials">JB</span>
+                </div>
+                <span class="logo-text">James Bernardo</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#approach">Approach</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#beyond-work">Beyond Work</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header id="hero-section">
+        <canvas id="particle-canvas"></canvas>
+        <div class="container">
+            <div class="header-content">
+                <p class="tagline fade-in">
+                    Marketing · Product · Partnerships · Digital Transformation
+                </p>
+                <h1 class="fade-in delay-1">
+                    Building bridges between technology, teams, and impact
+                </h1>
+                <p class="intro fade-in delay-2">
+                    I'm a versatile operator who thrives in the space between disciplines. Over 11+ years across London and Hong Kong, I've led marketing teams, rebuilt digital ecosystems, managed product development, and brought together stakeholders to create solutions that actually work. Currently navigating the full spectrum at Garage Society—from crafting our Webflow site to scaling programs across markets. Outside work, I make noise with modular synths, run trails in the mountains, and code creative experiments.
+                </p>
+                <div class="cta-section fade-in delay-3">
+                    <a href="mailto:jbernardo86@gmail.com" class="btn">Get in Touch</a>
+                    <a href="#approach" class="btn btn-secondary">How I Work</a>
+                    <a href="cv.pdf" class="btn btn-outline" download="">Download CV</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Approach Section -->
+    <section class="section" id="approach">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">My Approach</h2>
+                <p class="section-subtitle">
+                    I don't fit neatly into one box, and that's the point. The best solutions emerge when you can connect the dots across marketing, product, operations, and strategy.
+                </p>
+            </div>
+            
+            <div class="skills-list">
+                <div class="skill-item">
+                    <h3 class="skill-title">Marketing &amp; Growth</h3>
+                    <p class="skill-description">
+                        Leading full-funnel digital marketing strategies, from building websites on Webflow to managing multi-channel campaigns across Google Ads, Facebook, LinkedIn, and beyond. I've scaled operations from 3 to 15+ locations while maintaining brand consistency and driving engagement.
+                    </p>
+                </div>
+
+                <div class="skill-item">
+                    <h3 class="skill-title">Product &amp; Technology</h3>
+                    <p class="skill-description">
+                        Managing product roadmaps, overseeing ERP/CRM implementations, and leveraging AI tools to streamline operations. I bridge the gap between technical teams and business needs, ensuring solutions are both innovative and practical.
+                    </p>
+                </div>
+
+                <div class="skill-item">
+                    <h3 class="skill-title">Partnerships &amp; Business Development</h3>
+                    <p class="skill-description">
+                        Building strategic partnerships and bringing together diverse stakeholders around shared goals. From mentoring startups to speaking at TEDx, I create connections that drive mutual value.
+                    </p>
+                </div>
+
+                <div class="skill-item">
+                    <h3 class="skill-title">Strategic Leadership</h3>
+                    <p class="skill-description">
+                        Leading teams through transformation and uncertainty. I've successfully restructured a 10-person team into a lean 2-person operation without sacrificing service quality, proving efficiency doesn't mean compromise.
+                    </p>
+                </div>
+
+                <div class="skill-item">
+                    <h3 class="skill-title">Community Building</h3>
+                    <p class="skill-description">
+                        Creating meaningful programs that foster engagement and retention. Launched Garage Academy with 600+ knowledge-sharing events and grew a community from zero to 8,000+ active members.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Current Work Section -->
+    <section class="section" id="experience">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Current Role</h2>
+            </div>
+            
+            <div class="highlight-box">
+                <h3>Regional Programme &amp; Marketing Director — Garage Society</h3>
+                <p>
+                    Wearing multiple hats across a small, agile team. I lead our marketing strategy, manage product development, cultivate partnerships, and drive business development across Hong Kong and regional markets. Recently rebuilt our entire digital presence on Webflow, implemented AI-driven workflow improvements, and restructured our operations to be 35% more efficient while cutting costs by 20%—all while maintaining the community-first culture that makes us unique.
+                </p>
+                
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-number">35%</div>
+                        <div class="stat-label">Efficiency Gain</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">20%</div>
+                        <div class="stat-label">Cost Reduction</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">8,000+</div>
+                        <div class="stat-label">Community Members</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-year">2020 - Present</div>
+                    <div class="timeline-title">Regional Programme &amp; Marketing Director</div>
+                    <div class="timeline-subtitle">Garage Society, Hong Kong</div>
+                    <p class="timeline-description">
+                        Leading cross-functional initiatives spanning marketing, product, partnerships, and business development. Successfully navigated team restructuring during market downturn, achieving 20% increase in customer retention through strategic program development.
+                    </p>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">2017 - 2020</div>
+                    <div class="timeline-title">Head of Marketing &amp; Partnerships</div>
+                    <div class="timeline-subtitle">Garage Society, Hong Kong</div>
+                    <p class="timeline-description">
+                        Scaled operations from 3 to 15+ locations across Hong Kong, India, and Southeast Asia. Developed cross-market brand strategy increasing awareness by 30% and established Garage Academy as industry thought leader.
+                    </p>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">2014 - 2017</div>
+                    <div class="timeline-title">Marketing &amp; Programme Manager</div>
+                    <div class="timeline-subtitle">Garage Society, Hong Kong</div>
+                    <p class="timeline-description">
+                        Built all digital marketing channels from ground up, achieving 180% year-over-year growth. Launched first regional marketing campaigns and developed content strategy framework resulting in 75% increase in engagement.
+                    </p>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">2013 - 2014</div>
+                    <div class="timeline-title">Program Analyst</div>
+                    <div class="timeline-subtitle">Lambeth Council, London</div>
+                    <p class="timeline-description">
+                        Managed £1.1 million grant program operations and technology implementation. Led innovation workshops for 132 public sector participants.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Beyond Work Section -->
+    <section class="section" id="beyond-work">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Beyond Work</h2>
+                <p class="section-subtitle">
+                    Music, mountains, and pushing limits. These projects keep me balanced and remind me why building things matters.
+                </p>
+            </div>
+
+            <!-- Music Subsection -->
+            <div class="subsection">
+                <h3 class="subsection-title">Music</h3>
+                <p class="subsection-subtitle">
+                    From modular ambient noise to indie rock, music is where I explore texture, space, and collaboration.
+                </p>
+
+                <div class="band-list">
+                    <div class="band-item">
+                        <div>
+                            <h4 class="band-name">JOSHUA JAMES - BAPTISM</h4>
+                        </div>
+                        <div class="band-details">
+                            <p class="band-type">Modular ambient noise duo</p>
+                            <p class="band-description">
+                                Exploring texture and space through experimental synthesis. Creating immersive soundscapes that blur the line between music and sonic art.
+                            </p>
+                            <a href="https://jamesbernardo.notion.site/JOSHUA-JAMES-BAPTISM-modular-ambient-noise-2d0408fb35a447c0a1223e06c22397de" class="band-link" target="_blank" rel="noopener">
+                                Listen &amp; Learn More
+                                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                    <path d="M7 17L17 7M17 7H7M17 7V17"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="band-item">
+                        <div>
+                            <h4 class="band-name">SEMAJ</h4>
+                        </div>
+                        <div class="band-details">
+                            <p class="band-type">Solo electronic experiments</p>
+                            <p class="band-description">
+                                Electronic experiments and odd offcuts. Solo work exploring beats, loops, and soundscapes with a focus on spontaneity and experimentation.
+                            </p>
+                            <a href="https://jamesbernardo.notion.site/SEMAJ-Electronic-experiments-offcuts-32f61d0e81314426be3abfa6a9d325c1" class="band-link" target="_blank" rel="noopener">
+                                Listen &amp; Learn More
+                                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                    <path d="M7 17L17 7M17 7H7M17 7V17"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="band-item">
+                        <div>
+                            <h4 class="band-name">MASS CITY MACHINE</h4>
+                        </div>
+                        <div class="band-details">
+                            <p class="band-type">Four-piece experimental rock</p>
+                            <p class="band-description">
+                                Pushing boundaries with space rock and noise. A collective exploration of volume, dynamics, and controlled chaos.
+                            </p>
+                            <a href="https://jamesbernardo.notion.site/MASS-CITY-MACHINE-four-piece-experimental-rock-band-5b2e28710b754efa8e91359f57b57ee3" class="band-link" target="_blank" rel="noopener">
+                                Listen &amp; Learn More
+                                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                    <path d="M7 17L17 7M17 7H7M17 7V17"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="band-item">
+                        <div>
+                            <h4 class="band-name">CUDDLES</h4>
+                        </div>
+                        <div class="band-details">
+                            <p class="band-type">Three-piece indie rock</p>
+                            <p class="band-description">
+                                Hong Kong-based indie rock band. Raw energy meets melodic hooks in a blend of garage rock and post-punk influences.
+                            </p>
+                            <a href="https://jamesbernardo.notion.site/CUDDLES-three-piece-rock-merchants-f723161d53c64c82872bbc296b0f9713" class="band-link" target="_blank" rel="noopener">
+                                Listen &amp; Learn More
+                                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                    <path d="M7 17L17 7M17 7H7M17 7V17"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="social-links">
+                    <a href="https://www.instagram.com/bbbernardo" class="social-link" target="_blank" rel="noopener">
+                        <svg class="social-icon" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path>
+                        </svg>
+                        Instagram
+                    </a>
+                </div>
+            </div>
+
+            <!-- Endurance Sports Subsection -->
+            <div class="subsection">
+                <h3 class="subsection-title">Endurance Sports</h3>
+                <p class="subsection-subtitle">
+                    Pushing physical and mental limits through trail running, marathons, and long-distance triathlons. It's where I find clarity and test resilience.
+                </p>
+
+                <div class="sports-grid">
+                    <div class="sport-item">
+                        <div>
+                            <h4 class="sport-name">Trail Running</h4>
+                        </div>
+                        <div>
+                            <p class="sport-description">
+                                Member of Team Char Siu Siu, competing in mixed pairs trail running events across Hong Kong's challenging terrain. Multiple podium finishes including top placements in the Hong Kong Trail Series. There's something meditative about navigating technical trails while your body screams for you to stop.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="sport-item">
+                        <div>
+                            <h4 class="sport-name">Marathon</h4>
+                        </div>
+                        <div>
+                            <p class="sport-description">
+                                Road marathon runner, balancing speed work with endurance training. Running 42.2km is less about the race itself and more about the discipline it takes to get there. Every long run is a lesson in pacing, patience, and mental toughness.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="sport-item">
+                        <div>
+                            <h4 class="sport-name">Long Distance Triathlon</h4>
+                        </div>
+                        <div>
+                            <p class="sport-description">
+                                Competing in long-distance triathlon events, combining swim, bike, and run disciplines. The training volume required forces you to become efficient with time and strategic about recovery. It's three sports in one, and somehow it all makes sense when you're in the zone.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="social-links">
+                    <a href="https://www.strava.com/athletes/18642283" class="social-link" target="_blank" rel="noopener">
+                        <svg class="social-icon" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M15.387 17.944l-2.089-4.116h-3.065L15.387 24l5.15-10.172h-3.066m-7.008-5.599l2.836 5.598h4.172L10.463 0l-7 13.828h4.169"></path>
+                        </svg>
+                        Strava
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Coffee CTA Section -->
+    <div class="coffee-cta" id="contact">
+        <div class="container">
+            <h2>Coffee in Hong Kong?</h2>
+            <p>
+                Always happy to chat about product strategy, marketing, trail running, or modular synths. If you're in Hong Kong, let's grab a coffee.
+            </p>
+            <a href="mailto:jbernardo86@gmail.com?subject=Coffee%20in%20Hong%20Kong" class="btn">Let's Connect</a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <p class="copyright">© 2026 James Bernardo · Hong Kong</p>
+                <ul class="footer-links">
+                    <li><a href="mailto:jbernardo86@gmail.com">jbernardo86@gmail.com</a></li>
+                    <li><a href="tel:+85255456842">+852 5545 6842</a></li>
+                    <li><a href="cv.pdf" download="">Download CV</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Logo image loading with fallback
+        const logoImg = document.getElementById('logo-img');
+        const logoInitials = document.getElementById('logo-initials');
+        
+        logoImg.onload = function() {
+            logoImg.style.display = 'block';
+            logoInitials.style.display = 'none';
+        };
+        
+        logoImg.onerror = function() {
+            logoImg.style.display = 'none';
+            logoInitials.style.display = 'block';
+        };
+        
+        // Try to load logo
+        logoImg.src = 'logo.png';
+        
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Enhanced Particle Network Animation with Variable Sizes
+        const canvas = document.getElementById('particle-canvas');
+        const ctx = canvas.getContext('2d');
+        const heroSection = document.getElementById('hero-section');
+
+        let particles = [];
+        let mouseX = 0;
+        let mouseY = 0;
+        let canvasWidth, canvasHeight;
+
+        function resizeCanvas() {
+            canvasWidth = canvas.width = heroSection.offsetWidth;
+            canvasHeight = canvas.height = heroSection.offsetHeight;
+        }
+
+        class Particle {
+            constructor() {
+                this.reset();
+                this.y = Math.random() * canvasHeight;
+                // Assign particle size to represent different scales
+                const rand = Math.random();
+                if (rand < 0.6) {
+                    // 60% - Small dots (individuals)
+                    this.radius = Math.random() * 1.5 + 1;
+                    this.type = 'individual';
+                } else if (rand < 0.85) {
+                    // 25% - Medium dots (teams)
+                    this.radius = Math.random() * 2 + 3;
+                    this.type = 'team';
+                } else {
+                    // 15% - Large dots (companies/organizations)
+                    this.radius = Math.random() * 3 + 5;
+                    this.type = 'company';
+                }
+            }
+
+            reset() {
+                this.x = Math.random() * canvasWidth;
+                this.y = Math.random() * canvasHeight;
+                this.vx = (Math.random() - 0.5) * 0.5;
+                this.vy = (Math.random() - 0.5) * 0.5;
+            }
+
+            update() {
+                const dx = mouseX - this.x;
+                const dy = mouseY - this.y;
+                const distance = Math.sqrt(dx * dx + dy * dy);
+
+                // Larger particles are less affected by mouse
+                const influence = this.type === 'company' ? 100 : 
+                                 this.type === 'team' ? 130 : 150;
+
+                if (distance < influence) {
+                    const force = (influence - distance) / influence;
+                    const strength = this.type === 'company' ? 0.1 : 
+                                    this.type === 'team' ? 0.15 : 0.2;
+                    this.vx += (dx / distance) * force * strength;
+                    this.vy += (dy / distance) * force * strength;
+                }
+
+                this.x += this.vx;
+                this.y += this.vy;
+                this.vx *= 0.95;
+                this.vy *= 0.95;
+
+                if (this.x < 0) this.x = canvasWidth;
+                if (this.x > canvasWidth) this.x = 0;
+                if (this.y < 0) this.y = canvasHeight;
+                if (this.y > canvasHeight) this.y = 0;
+            }
+
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+                
+                // Different opacity based on size
+                const alpha = this.type === 'company' ? 0.7 : 
+                             this.type === 'team' ? 0.65 : 0.6;
+                
+                ctx.fillStyle = `rgba(254, 126, 1, ${alpha})`;
+                ctx.fill();
+            }
+        }
+
+        function initParticles() {
+            particles = [];
+            const particleCount = Math.min(Math.floor((canvasWidth * canvasHeight) / 12000), 100);
+            for (let i = 0; i < particleCount; i++) {
+                particles.push(new Particle());
+            }
+        }
+
+        function drawConnections() {
+            for (let i = 0; i < particles.length; i++) {
+                for (let j = i + 1; j < particles.length; j++) {
+                    const dx = particles[i].x - particles[j].x;
+                    const dy = particles[i].y - particles[j].y;
+                    const distance = Math.sqrt(dx * dx + dy * dy);
+
+                    // Connection distance varies based on particle sizes
+                    const maxDistance = (particles[i].type === 'company' || particles[j].type === 'company') ? 140 :
+                                       (particles[i].type === 'team' || particles[j].type === 'team') ? 120 : 100;
+
+                    if (distance < maxDistance) {
+                        ctx.beginPath();
+                        
+                        // Thicker lines for connections involving larger particles
+                        const lineWidth = (particles[i].type === 'company' || particles[j].type === 'company') ? 1.5 :
+                                         (particles[i].type === 'team' || particles[j].type === 'team') ? 1.2 : 1;
+                        
+                        ctx.strokeStyle = `rgba(254, 126, 1, ${0.2 * (1 - distance / maxDistance)})`;
+                        ctx.lineWidth = lineWidth;
+                        ctx.moveTo(particles[i].x, particles[i].y);
+                        ctx.lineTo(particles[j].x, particles[j].y);
+                        ctx.stroke();
+                    }
+                }
+            }
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, canvasWidth, canvasHeight);
+            particles.forEach(particle => {
+                particle.update();
+                particle.draw();
+            });
+            drawConnections();
+            requestAnimationFrame(animate);
+        }
+
+        heroSection.addEventListener('mousemove', (e) => {
+            const rect = heroSection.getBoundingClientRect();
+            mouseX = e.clientX - rect.left;
+            mouseY = e.clientY - rect.top;
+        });
+
+        heroSection.addEventListener('touchmove', (e) => {
+            const rect = heroSection.getBoundingClientRect();
+            mouseX = e.touches[0].clientX - rect.left;
+            mouseY = e.touches[0].clientY - rect.top;
+        });
+
+        window.addEventListener('resize', () => {
+            resizeCanvas();
+            initParticles();
+        });
+
+        resizeCanvas();
+        initParticles();
+        animate();
+    </script>
+
+
+</body></html>
