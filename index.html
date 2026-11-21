@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="description" content="James Bernardo runs marketing and programmes for Garage Society in Hong Kong, and builds his own sites and apps with AI tools.">
+<link rel="canonical" href="https://jamesbernar.do/">
+<meta name="theme-color" content="#fe7e01">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://jamesbernar.do/">
+<meta property="og:title" content="James Bernardo | Marketing, programmes and building things, Hong Kong">
+<meta property="og:description" content="I run marketing and build the tools behind it. 12 years in Hong Kong, mostly at Garage Society.">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%23fe7e01'/%3E%3Ctext x='32' y='41' font-family='Arial,sans-serif' font-size='24' font-weight='700' text-anchor='middle' fill='%2317171a'%3EJB%3C/text%3E%3C/svg%3E">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"James Bernardo","url":"https://jamesbernar.do/","jobTitle":"Director, Marketing & Growth","worksFor":{"@type":"Organization","name":"Garage Society"},"address":{"@type":"PostalAddress","addressLocality":"Hong Kong"},"sameAs":["https://www.instagram.com/bbbernardo","https://www.strava.com/athletes/18642283"]}</script>
+<title>James Bernardo | Marketing, programmes and building things, Hong Kong</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: one column of text on the left, the connection map living in the hero; lists read like a project log, not cards. */
+:root {
+  --bg: #f6f6f3;
+  --surface: #ecebe6;
+  --ink: #17171a;
+  --muted: #5c5b57;
+  --line: #d9d8d2;
+  --orange: #fe7e01;
+  --orange-ink: #b45400;
+  --on-orange: #17171a;
+  --display: "Schibsted Grotesk", "Helvetica Neue", Arial, sans-serif;
+  --text: "Schibsted Grotesk", "Helvetica Neue", Arial, sans-serif;
+  --measure: 62ch;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #131312; --surface: #1d1d1b; --ink: #efeee9; --muted: #a3a29c; --line: #2f2e2b;
+    --orange: #fe7e01; --orange-ink: #ff9a3c; --on-orange: #131312; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #131312; --surface: #1d1d1b; --ink: #efeee9; --muted: #a3a29c; --line: #2f2e2b;
+  --orange: #fe7e01; --orange-ink: #ff9a3c; --on-orange: #131312; color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body {
+  margin: 0; background: var(--bg); color: var(--ink);
+  font-family: var(--text); font-size: 17px; line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+body::before {
+  content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px);
+  z-index: 60; background: var(--bg);
+}
+a { color: inherit; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--orange); outline-offset: 3px; }
+.wrap {
+  max-width: 1120px; margin: 0 auto;
+  padding-left: max(20px, env(safe-area-inset-left, 0px));
+  padding-right: max(20px, env(safe-area-inset-right, 0px));
+}
+
+/* Nav */
+.top {
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 50;
+  background: color-mix(in srgb, var(--bg) 88%, transparent);
+  backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+}
+.top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; height: 64px; }
+.brand { display: flex; align-items: center; gap: 12px; text-decoration: none; font-weight: 600; letter-spacing: -0.01em; }
+.mark {
+  position: relative; width: 34px; height: 34px; border-radius: 50%;
+  background: var(--orange); color: var(--on-orange);
+  display: grid; place-items: center; font-size: 13px; font-weight: 700; overflow: hidden; flex: none;
+}
+.mark img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.nav { display: flex; gap: 26px; list-style: none; margin: 0; padding: 0; }
+.nav a { text-decoration: none; color: var(--muted); font-size: 14.5px; }
+.nav a:hover { color: var(--ink); }
+@media (max-width: 760px) {
+  .nav { gap: 16px; }
+  .nav .hide-sm { display: none; }
+}
+@media (max-width: 420px) { .brand span.name { display: none; } }
+
+/* Hero */
+.hero { position: relative; overflow: hidden; border-bottom: 1px solid var(--line); }
+#map { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+.hero .wrap { position: relative; z-index: 1; padding-block: 96px 88px; pointer-events: none; }
+.hero .wrap a { pointer-events: auto; }
+.eyebrow { color: var(--muted); margin: 0 0 28px; display: flex; align-items: center; gap: 10px; }
+.eyebrow::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--orange); flex: none; }
+h1 {
+  font-family: var(--display); font-weight: 600; letter-spacing: -0.035em; line-height: 1.02;
+  font-size: clamp(42px, 7.2vw, 88px); margin: 0 0 28px; max-width: 11.5ch; text-wrap: balance;
+}
+h1 em { font-style: normal; color: var(--orange-ink); }
+.lede { font-size: clamp(17px, 1.6vw, 19px); max-width: 46ch; margin: 0 0 36px; color: var(--ink); }
+.actions { display: flex; flex-wrap: wrap; gap: 12px; }
+.btn {
+  display: inline-flex; align-items: center; gap: 8px; padding: 13px 20px; border-radius: 999px;
+  text-decoration: none; font-weight: 500; font-size: 15px; border: 1px solid var(--line);
+  background: var(--bg); color: var(--ink); transition: border-color .15s, background .15s;
+}
+.btn:hover { border-color: var(--ink); }
+.btn.primary { background: var(--orange); border-color: var(--orange); color: var(--on-orange); }
+.btn.primary:hover { background: color-mix(in srgb, var(--orange) 85%, var(--ink)); }
+@media (max-width: 760px) {
+  .hero .wrap { padding-block: 64px 56px; }
+}
+
+/* Sections */
+section { padding-block: 96px; border-bottom: 1px solid var(--line); scroll-margin-top: 64px; }
+.sec-head { display: grid; grid-template-columns: 220px 1fr; gap: 32px; margin-bottom: 48px; }
+.sec-head .mono { color: var(--orange-ink); padding-top: 12px; }
+h2 { font-family: var(--display); font-size: clamp(30px, 4vw, 44px); line-height: 1.08; letter-spacing: -0.03em; font-weight: 600; margin: 0 0 14px; text-wrap: balance; }
+.sec-head p { margin: 0; color: var(--muted); max-width: 52ch; }
+h3 { font-size: 21px; letter-spacing: -0.015em; line-height: 1.25; margin: 0; font-weight: 600; }
+@media (max-width: 760px) {
+  section { padding-block: 64px; }
+  .sec-head { grid-template-columns: 1fr; gap: 4px; margin-bottom: 32px; }
+  .sec-head .mono { padding-top: 0; }
+}
+
+/* Project log */
+.log { list-style: none; margin: 0; padding: 0; }
+.log li { display: grid; grid-template-columns: 220px 1fr 240px; gap: 32px; padding-block: 30px; border-top: 1px solid var(--line); }
+.log li:last-child { border-bottom: 1px solid var(--line); }
+.log .kind { color: var(--muted); font-size: 15px; padding-top: 3px; }
+.log .body { min-width: 0; }
+.log .body p { margin: 10px 0 0; max-width: var(--measure); }
+.log .body a { text-decoration-color: var(--orange); text-underline-offset: 3px; }
+.outcome { font-size: 15px; color: var(--muted); min-width: 0; }
+.outcome p { margin: 10px 0 0; }
+.chip {
+  display: inline-flex; align-items: center; gap: 8px; font-size: 13.5px;
+  padding: 3px 11px; border-radius: 999px; border: 1px solid var(--line); color: var(--ink);
+}
+.chip::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--muted); }
+.chip.on::before { background: var(--orange); box-shadow: 0 0 0 3px color-mix(in srgb, var(--orange) 25%, transparent); }
+.also { margin: 32px 0 0; color: var(--muted); max-width: 80ch; }
+.also a { color: var(--ink); text-decoration-color: var(--orange); text-underline-offset: 3px; }
+@media (max-width: 900px) {
+  .log li { grid-template-columns: 1fr; gap: 10px; padding-block: 26px; }
+  .log .kind { padding-top: 0; }
+}
+
+/* How I work */
+.areas { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 44px 56px; margin-left: 252px; }
+.areas p { margin: 10px 0 0; max-width: 52ch; }
+.areas .tools { grid-column: 1 / -1; padding: 24px 26px; background: var(--surface); border-radius: 14px; }
+.areas .tools h3 { font-size: 17px; }
+.areas .tools p { max-width: 80ch; }
+@media (max-width: 900px) { .areas { margin-left: 0; grid-template-columns: 1fr; gap: 32px; } }
+
+/* Experience */
+.role-now { margin-left: 252px; max-width: var(--measure); margin-bottom: 40px; font-size: 19px; }
+.jobs { list-style: none; margin: 0; padding: 0; }
+.jobs li { display: grid; grid-template-columns: 220px 1fr; gap: 32px; padding-block: 24px; border-top: 1px solid var(--line); }
+.jobs li:last-child { border-bottom: 1px solid var(--line); }
+.jobs .yrs { font-variant-numeric: tabular-nums; color: var(--muted); font-size: 15px; padding-top: 3px; }
+.jobs .org { color: var(--muted); font-size: 15px; margin-top: 2px; }
+.jobs p { margin: 10px 0 0; max-width: var(--measure); }
+@media (max-width: 760px) {
+  .role-now { margin-left: 0; }
+  .jobs li { grid-template-columns: 1fr; gap: 6px; }
+}
+
+/* Outside work */
+.split { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 56px; margin-left: 252px; }
+.split > div { min-width: 0; }
+.split h3 { margin-bottom: 18px; }
+.rows { list-style: none; margin: 0; padding: 0; }
+.rows li { padding-block: 16px; border-top: 1px solid var(--line); }
+.rows li:last-child { border-bottom: 1px solid var(--line); }
+.rows .r1 { display: flex; justify-content: space-between; gap: 12px; align-items: baseline; flex-wrap: wrap; }
+.rows .r1 b { font-weight: 600; }
+.rows .r1 a { font-size: 14px; color: var(--orange-ink); text-decoration: none; white-space: nowrap; }
+.rows .r1 a:hover { text-decoration: underline; }
+.rows .sub { color: var(--muted); font-size: 15px; margin: 4px 0 0; }
+.races { list-style: none; margin: 10px 0 0; padding: 0; font-size: 15px; color: var(--muted); }
+.races li { border: 0; padding: 3px 0; display: grid; grid-template-columns: 48px 1fr; gap: 8px; }
+.races li:last-child { border: 0; }
+.races li > span:first-child { color: var(--ink); font-variant-numeric: tabular-nums; }
+.ext { display: inline-flex; gap: 8px; margin-top: 18px; font-size: 15px; color: var(--orange-ink); text-decoration: none; }
+.ext:hover { text-decoration: underline; }
+@media (max-width: 900px) { .split { margin-left: 0; grid-template-columns: 1fr; gap: 48px; } }
+.tinker { margin: 64px 0 0 252px; }
+.tinker > .sub { color: var(--muted); font-size: 15px; margin: 6px 0 18px; }
+.tinker-list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.tinker-list li { padding: 18px 20px; background: var(--surface); border-radius: 14px; min-width: 0; }
+.tinker-list .r1 { display: flex; justify-content: space-between; gap: 12px; align-items: baseline; flex-wrap: wrap; }
+.tinker-list .r1 b { font-weight: 600; }
+.tinker-list .r1 a { font-size: 14px; color: var(--orange-ink); text-decoration: none; white-space: nowrap; }
+.tinker-list .r1 a:hover { text-decoration: underline; }
+.tinker-list .sub { color: var(--muted); font-size: 15px; margin: 6px 0 0; }
+@media (max-width: 900px) { .tinker { margin-left: 0; } .tinker-list { grid-template-columns: 1fr; } }
+
+/* Contact */
+.contact { background: var(--orange); color: var(--on-orange); border-bottom: 0; }
+.contact .inner { display: grid; grid-template-columns: 1fr auto; gap: 32px; align-items: end; }
+.contact h2 { font-size: clamp(38px, 6vw, 72px); margin: 0 0 16px; }
+.contact p { margin: 0; max-width: 48ch; font-size: 18px; }
+.contact .btn { background: var(--on-orange); color: var(--orange); border-color: var(--on-orange); }
+.contact .btn:hover { background: color-mix(in srgb, var(--on-orange) 85%, var(--orange)); }
+.contact .addr { margin-top: 10px; font-size: 14px; text-align: right; user-select: all; }
+@media (max-width: 760px) { .contact .inner { grid-template-columns: 1fr; } .contact .addr { text-align: left; } }
+
+/* Motion lower down: scroll-linked, CSS only where supported. Everything is fully visible without it. */
+.contact { position: relative; overflow: hidden; }
+#net2 { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+.contact .wrap { position: relative; z-index: 1; }
+.tinker-list li {
+  background: radial-gradient(220px circle at var(--mx, -300px) var(--my, -300px), color-mix(in srgb, var(--orange) 16%, transparent), transparent 70%), var(--surface);
+  transition: transform .25s ease;
+}
+.tinker-list li:hover { transform: translateY(-2px); }
+.log li { position: relative; }
+.jobs { position: relative; }
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes ping {
+    0% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--orange) 55%, transparent); }
+    70%, 100% { box-shadow: 0 0 0 7px color-mix(in srgb, var(--orange) 0%, transparent); }
+  }
+  @supports (animation-timeline: view()) {
+    .log li, .jobs li, .areas > div, .split .rows > li, .tinker-list li {
+      animation: rise linear both; animation-timeline: view(); animation-range: entry 0% entry 70%;
+    }
+    @keyframes rise { from { opacity: .3; translate: 0 28px; } to { opacity: 1; translate: 0 0; } }
+  }
+}
+
+/* Brand touches: the orange dot from the logo shows up as a node across the page. */
+::selection { background: var(--orange); color: var(--on-orange); }
+.brand .mark { transition: background .2s, color .2s, box-shadow .2s; }
+.brand:hover .mark { background: var(--bg); color: var(--orange); box-shadow: inset 0 0 0 2px var(--orange); }
+.nav a { position: relative; }
+.nav a::after {
+  content: ""; position: absolute; left: 50%; bottom: -10px; width: 5px; height: 5px; margin-left: -2.5px;
+  border-radius: 50%; background: var(--orange); transform: scale(0); transition: transform .2s ease;
+}
+.nav a.active { color: var(--ink); }
+.nav a.active::after, .nav a:hover::after { transform: scale(1); }
+h2::after {
+  content: ""; display: inline-block; width: 0.2em; height: 0.2em; margin-left: 0.06em;
+  border-radius: 50%; background: var(--orange); vertical-align: 0.02em;
+}
+.contact h2::after { background: var(--on-orange); }
+mark {
+  color: inherit; padding: 0 .1em; margin: 0 -.1em;
+  background: linear-gradient(transparent 60%, color-mix(in srgb, var(--orange) 38%, transparent) 60%);
+}
+.mini-wrap { display: block; padding-top: 4px; }
+.mini { display: block; max-width: 100%; }
+@media (max-width: 760px) { .mini-wrap { display: none; } }
+.log h3 a, .rows .r1 a, .ext { transition: color .15s; }
+.now { color: var(--ink); display: inline-flex; align-items: center; gap: 7px; }
+.now::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--orange); }
+.podium { color: var(--orange-ink); font-weight: 600; }
+@media (prefers-reduced-motion: no-preference) {
+  .now::before { animation: ping 2.6s ease-out infinite; }
+}
+
+footer { padding-block: 28px; color: var(--muted); font-size: 14px; }
+footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+footer ul { display: flex; gap: 20px; list-style: none; margin: 0; padding: 0; flex-wrap: wrap; }
+footer a { text-decoration: none; }
+footer a:hover { color: var(--ink); }
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="James Bernardo, back to top">
+      <span class="mark">JB<img src="logo.png" alt="" onerror="this.remove()"></span>
+      <span class="name">James Bernardo</span>
+    </a>
+    <ul class="nav">
+      <li><a href="#built">Built</a></li>
+      <li class="hide-sm"><a href="#approach">How I work</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li class="hide-sm"><a href="#outside">Outside work</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</header>
+
+<main id="top">
+<div class="hero" id="hero">
+  <canvas id="map" aria-hidden="true"></canvas>
+  <div class="wrap">
+    <h1>I run marketing and build the <em>tools</em> behind it</h1>
+    <p class="lede">I've been in Hong Kong for 12 years, after starting out in London. At Garage Society, a coworking space operator, I look after the website, content, analytics, CRM and events, with no ad budget. Outside work I build sites and small apps for fun with AI tools, make music and enjoy endurance sport.</p>
+    <div class="actions">
+      <a class="btn primary" href="mailto:jbernardo86@gmail.com">Email me</a>
+      <a class="btn" href="#built">See what I've built</a>
+      <a class="btn" href="JB-CV-2025.pdf" target="_blank" rel="noopener">Download CV</a>
+    </div>
+  </div>
+</div>
+
+<section id="built">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="mini-wrap" aria-hidden="true"><canvas class="mini"></canvas></span>
+      <div>
+        <h2>Things I've built</h2>
+        <p>Ideas I've taken from a sketch to something live, and what happened to each one.</p>
+      </div>
+    </div>
+    <ul class="log">
+      <li>
+        <span class="kind">Garage Society</span>
+        <div class="body">
+          <h3>Garage Society's website and channels</h3>
+          <p>I built our Webflow site, social channels, newsletter and analytics myself. I've connected Claude to our systems through MCP, so it can work directly in Webflow, Airtable and our analytics. I use it to update pages, fix SEO and pull reports, and I keep changing the site based on what the numbers show.</p>
+        </div>
+        <div class="outcome"><span class="chip on">Running</span><p>Steady inbound enquiries from organic channels, with no ad spend.</p></div>
+      </li>
+      <li>
+        <span class="kind">Garage Society</span>
+        <div class="body">
+          <h3>Garage Stories</h3>
+          <p>Member interviews. I record a 20-minute chat, transcribe it with AI and draft it in a structure I set up. Then I edit it and cut it into carousels and video.</p>
+        </div>
+        <div class="outcome"><span class="chip on">Ongoing</span></div>
+      </li>
+      <li>
+        <span class="kind">Garage Society</span>
+        <div class="body">
+          <h3><a href="https://tour.thegaragesociety.com/causeway-bay" target="_blank" rel="noopener">360° space tours</a></h3>
+          <p>Lets people walk around one of our spaces, like Causeway Bay, before they book a visit.</p>
+        </div>
+        <div class="outcome"><span class="chip on">Live</span></div>
+      </li>
+      <li>
+        <span class="kind">My own project</span>
+        <div class="body">
+          <h3><a href="https://www.readyoffice.work" target="_blank" rel="noopener">readyoffice.work</a></h3>
+          <p>A site and brand I built end to end with Claude, Git, Vercel and Airtable. I made the visuals and blog posts too, and set up Search Console, analytics and the email form.</p>
+        </div>
+        <div class="outcome"><span class="chip on">Live</span><p>I'm tuning it with search and analytics data.</p></div>
+      </li>
+      <li>
+        <span class="kind">Singapore</span>
+        <div class="body">
+          <h3>LaunchPad, an innovation campus bid</h3>
+          <p>I led the concept, programme model, marketing plan and pitch for a government innovation campus tender, with a workspace operator and a design firm. It covered startup cohorts, events, investor access and a four-stage path for members.</p>
+        </div>
+        <div class="outcome"><span class="chip">Didn't go ahead</span><p>We reached the final round. Then the client scrapped the tender and nobody won.</p></div>
+      </li>
+      <li>
+        <span class="kind">Changi Airport, Singapore</span>
+        <div class="body">
+          <h3>CONNECT</h3>
+          <p>I designed the brand and ran an innovation hub with Changi Airport's innovation team.</p>
+        </div>
+        <div class="outcome"><span class="chip">Ended</span><p>It ran for a short time. It sat behind check-in, so not many people could get to it.</p></div>
+      </li>
+      <li>
+        <span class="kind">Garage Society</span>
+        <div class="body">
+          <h3>Garage Commons</h3>
+          <p>A platform for the people who came to our talks and events. It built a large email community around the programme.</p>
+        </div>
+        <div class="outcome"><span class="chip">Ended</span><p>We never found a way to make money from it, and covid finished it off.</p></div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section id="approach">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="mini-wrap" aria-hidden="true"><canvas class="mini"></canvas></span>
+      <div>
+        <h2>How I work</h2>
+        <p>I don't stick to one channel. I build the thing, put it in front of people, then fix it based on what they actually do.</p>
+      </div>
+    </div>
+    <div class="areas">
+      <div>
+        <h3>Marketing</h3>
+        <p>I run Garage Society's marketing from the website out: the Webflow site, search, content, social, email, events and partners. I've kept one brand across our locations in Hong Kong, India and Southeast Asia.</p>
+      </div>
+      <div>
+        <h3>Programmes and community</h3>
+        <p>I design programmes that get startups, companies and government in the same room. That includes Garage Academy, our events programme, and projects like LaunchPad and CONNECT. I've also mentored startups and spoken at TEDx.</p>
+      </div>
+      <div>
+        <h3>Building things</h3>
+        <p>I build my own sites, small web apps and automations with AI tools, Git, Vercel and Airtable. At work I've run product roadmaps and CRM and ERP rollouts, and I'm usually the one translating between developers and the rest of the business.</p>
+      </div>
+      <div>
+        <h3>Running a small team</h3>
+        <p>When the market turned, I restructured our team into a much smaller one and kept the service running for members.</p>
+      </div>
+      <div class="tools">
+        <h3>Tools I use</h3>
+        <p>Webflow, Google Analytics 4 and Search Console for the site and search. Mailchimp for email. Airtable and OfficeRnD for CRM and operations. Git and Vercel for sites I code myself, and Claude and other AI tools for drafting, building and automating. I taught myself all of it by doing, and I'm comfortable working alongside developers without being one.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="mini-wrap" aria-hidden="true"><canvas class="mini"></canvas></span>
+      <div>
+        <h2>Where I've worked</h2>
+      </div>
+    </div>
+    <p class="role-now">I'm Director, Marketing &amp; Growth at Garage Society, a coworking space operator. With a small team I look after marketing, programmes, partnerships and new business in Hong Kong and the region.</p>
+    <ul class="jobs">
+      <li>
+        <span class="yrs">2020 – <span class="now">now</span></span>
+        <div>
+          <h3>Director, Marketing &amp; Growth</h3>
+          <div class="org">Garage Society, coworking space operator, Hong Kong</div>
+          <p>Marketing, product, partnerships and business development. I restructured the team through the downturn and rebuilt our website on Webflow.</p>
+        </div>
+      </li>
+      <li>
+        <span class="yrs">2017 – 2020</span>
+        <div>
+          <h3>Head of Marketing &amp; Partnerships</h3>
+          <div class="org">Garage Society, coworking space operator, Hong Kong</div>
+          <p>Ran marketing and partnerships while we opened locations across Hong Kong, India and Southeast Asia, and grew Garage Academy.</p>
+        </div>
+      </li>
+      <li>
+        <span class="yrs">2014 – 2017</span>
+        <div>
+          <h3>Marketing &amp; Programme Manager</h3>
+          <div class="org">Garage Society, coworking space operator, Hong Kong</div>
+          <p>Built our digital channels from scratch and ran our first regional campaigns.</p>
+        </div>
+      </li>
+      <li>
+        <span class="yrs">2013 – 2014</span>
+        <div>
+          <h3>Programme Analyst</h3>
+          <div class="org">Lambeth Council, London</div>
+          <p>Ran the operations for a council grant programme and led innovation workshops for public sector staff.</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section id="outside">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="mini-wrap" aria-hidden="true"><canvas class="mini"></canvas></span>
+      <div>
+        <h2>Outside work</h2>
+      </div>
+    </div>
+    <div class="split">
+      <div>
+        <h3>Music</h3>
+        <ul class="rows">
+          <li>
+            <div class="r1"><b>Semaj</b><a href="https://jamesbernardo.notion.site/SEMAJ-Electronic-experiments-offcuts-32f61d0e81314426be3abfa6a9d325c1" target="_blank" rel="noopener">Listen ↗</a></div>
+            <p class="sub">Solo electronic. Beats, loops and offcuts I make on my own.</p>
+          </li>
+          <li>
+            <div class="r1"><b>Mass City Machine</b><a href="https://jamesbernardo.notion.site/MASS-CITY-MACHINE-four-piece-experimental-rock-band-5b2e28710b754efa8e91359f57b57ee3" target="_blank" rel="noopener">Listen ↗</a></div>
+            <p class="sub">Four-piece experimental rock. Space rock and noise, played loud.</p>
+          </li>
+          <li>
+            <div class="r1"><b>Cuddles</b><a href="https://jamesbernardo.notion.site/CUDDLES-three-piece-rock-merchants-f723161d53c64c82872bbc296b0f9713" target="_blank" rel="noopener">Listen ↗</a></div>
+            <p class="sub">Three-piece indie rock from Hong Kong, somewhere between garage rock and post-punk.</p>
+          </li>
+          <li>
+            <div class="r1"><b>Good Ruins</b><a href="https://goodruins.com" target="_blank" rel="noopener">Visit ↗</a></div>
+            <p class="sub">An archive of live band recordings.</p>
+          </li>
+        </ul>
+        <a class="ext" href="https://www.instagram.com/bbbernardo" target="_blank" rel="noopener">Instagram ↗</a>
+      </div>
+      <div>
+        <h3>Endurance sport</h3>
+        <ul class="rows">
+          <li>
+            <div class="r1"><b>Trail running</b></div>
+            <p class="sub">Mixed pairs with Team Char Siu Siu on Hong Kong's trails.</p>
+            <ul class="races">
+              <li><span>2025</span><span>HK100 Half</span></li>
+              <li><span>2024</span><span>MoonTrekker 30k, mixed pairs</span></li>
+              <li><span>2024</span><span>HK100 Half</span></li>
+              <li><span>2023</span><span>The North Face 50k, DNF</span></li>
+              <li><span>2023</span><span>MoonTrekker 30k, mixed pairs, 5th</span></li>
+              <li><span>2019</span><span>MoonTrekker 30k, mixed pairs, 5:00, <span class="podium">3rd</span></span></li>
+              <li><span>2019</span><span>HK50 West, 8:52, <span class="podium">3rd</span></span></li>
+              <li><span>2018</span><span>Lantau 50, 5:53, 84th of 202</span></li>
+            </ul>
+          </li>
+          <li>
+            <div class="r1"><b>Marathon</b></div>
+            <p class="sub">Hong Kong, Tokyo, Osaka, Kyoto and Fukuoka.</p>
+          </li>
+          <li>
+            <div class="r1"><b>Long-distance triathlon</b></div>
+            <p class="sub">Ironman Langkawi (full distance), plus 70.3s in Xiamen, Cebu and Phuket.</p>
+          </li>
+        </ul>
+        <a class="ext" href="https://www.strava.com/athletes/18642283" target="_blank" rel="noopener">Strava ↗</a>
+      </div>
+    </div>
+    <div class="tinker">
+      <h3>Things I tinker with</h3>
+      <p class="sub">Small projects I build with AI tools, mostly for fun.</p>
+      <ul class="tinker-list">
+        <li>
+          <div class="r1"><b>Swingby</b><a href="https://jamesbernardo.github.io/swingby/" target="_blank" rel="noopener">Try it ↗</a></div>
+          <p class="sub">Finds the nearest playground and shows what's there. You can tick off the ones you've been to in a playground passport.</p>
+        </li>
+        <li>
+          <div class="r1"><b>TrouveJeux Montréal</b><a href="https://trouvejeux-montreal.netlify.app/" target="_blank" rel="noopener">Try it ↗</a></div>
+          <p class="sub">A French and English guide to indoor places in Montréal for babies and toddlers, for when it's -20 outside. You can search, filter and suggest new spots.</p>
+        </li>
+        <li>
+          <div class="r1"><b>All Pain, No Gain</b><a href="https://jamesbernardo.github.io/allpainnogain/" target="_blank" rel="noopener">Play ↗</a></div>
+          <p class="sub">An endless night climb up Lantau Peak. Turn the sound on.</p>
+        </li>
+        <li>
+          <div class="r1"><b>Jamuary 2026</b><a href="https://jamesbernardo.github.io/jamuary2026/" target="_blank" rel="noopener">Listen ↗</a></div>
+          <p class="sub">A track a day for all of January, made in Ableton Live. 31 tracks.</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <canvas id="net2" aria-hidden="true"></canvas>
+  <div class="wrap inner">
+    <div>
+      <h2>Coffee in Hong Kong?</h2>
+      <p>I'm always happy to talk about marketing, AI tools, trail running or gear acquisition syndrome. If you're in Hong Kong, let's get a coffee.</p>
+    </div>
+    <div>
+      <a class="btn" href="mailto:jbernardo86@gmail.com?subject=Coffee%20in%20Hong%20Kong">Email me</a>
+      <div class="addr">jbernardo86@gmail.com</div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 James Bernardo · Hong Kong</span>
+    <ul>
+      <li><a href="mailto:jbernardo86@gmail.com">jbernardo86@gmail.com</a></li>
+      <li><a href="JB-CV-2025.pdf" target="_blank" rel="noopener">Download CV</a></li>
+      <li><a href="https://www.strava.com/athletes/18642283" target="_blank" rel="noopener">Strava</a></li>
+      <li><a href="https://www.instagram.com/bbbernardo" target="_blank" rel="noopener">Instagram</a></li>
+    </ul>
+  </div>
+</footer>
+
+<script>
+/* Connection map: places James has worked and the parts of his work, drawn as a quiet network.
+   Like the original site, the cursor gently pulls nearby dots in, so links form gradually as you move. */
+(function () {
+  var canvas = document.getElementById('map');
+  var hero = document.getElementById('hero');
+  if (!canvas || !canvas.getContext) return;
+  var ctx = canvas.getContext('2d');
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var places = ['Hong Kong', 'London', 'Singapore', 'India', 'Thailand', 'Cambodia'];
+  var work = ['Programmes', 'Community', 'Events', 'Partnerships', 'Content', 'CRM'];
+  var W = 0, H = 0, dpr = 1, nodes = [], mx = -9999, my = -9999, raf = 0, colors = {};
+
+  function readColors() {
+    var cs = getComputedStyle(document.documentElement);
+    colors.orange = cs.getPropertyValue('--orange').trim() || '#fe7e01';
+    colors.muted = cs.getPropertyValue('--muted').trim() || '#5c5b57';
+  }
+  function rand(a, b) { return a + Math.random() * (b - a); }
+  function node(x0, label, kind) {
+    var r = kind === 'place' ? rand(4, 5.5) : kind === 'work' ? rand(3, 4) : (Math.random() < 0.7 ? rand(1, 2.2) : rand(2.5, 3.5));
+    return { x: rand(x0, W - 20), y: rand(20, H - 20), dx: rand(-0.12, 0.12), dy: rand(-0.12, 0.12), vx: 0, vy: 0, r: r, label: label, kind: kind };
+  }
+
+  function build() {
+    var rect = hero.getBoundingClientRect();
+    dpr = Math.min(window.devicePixelRatio || 1, 2);
+    W = rect.width; H = rect.height;
+    canvas.width = Math.round(W * dpr); canvas.height = Math.round(H * dpr);
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    var narrow = W < 760, x0 = narrow ? 0 : Math.max(W * 0.55, W / 2 + 120);
+    nodes = [];
+    places.forEach(function (p) { nodes.push(node(x0, p, 'place')); });
+    if (!narrow) work.forEach(function (w) { nodes.push(node(x0, w, 'work')); });
+    var extra = Math.min(Math.floor((W - (narrow ? 0 : W * 0.45)) * H / 9000), narrow ? 22 : 60);
+    for (var i = 0; i < extra; i++) nodes.push(node(narrow ? 0 : W * 0.45, null, 'dot'));
+  }
+
+  function step() {
+    for (var i = 0; i < nodes.length; i++) {
+      var n = nodes[i], ddx = mx - n.x, ddy = my - n.y, d = Math.sqrt(ddx * ddx + ddy * ddy);
+      var reach = n.kind === 'place' ? 110 : n.kind === 'work' ? 130 : 150;
+      var pull = n.kind === 'place' ? 0.06 : n.kind === 'work' ? 0.1 : 0.16;
+      if (d < reach && d > 1) {
+        var f = (reach - d) / reach;
+        n.vx += (ddx / d) * f * pull; n.vy += (ddy / d) * f * pull;
+      }
+      n.vx *= 0.95; n.vy *= 0.95;
+      n.x += n.vx + n.dx; n.y += n.vy + n.dy;
+      if (n.x < -10) n.x = W + 10; else if (n.x > W + 10) n.x = -10;
+      if (n.y < -10) n.y = H + 10; else if (n.y > H + 10) n.y = -10;
+    }
+  }
+
+  function draw() {
+    ctx.clearRect(0, 0, W, H);
+    var narrow = W < 760, fade = narrow ? 0.35 : 1;
+    ctx.strokeStyle = colors.orange;
+    for (var i = 0; i < nodes.length; i++) {
+      for (var j = i + 1; j < nodes.length; j++) {
+        var a = nodes[i], b = nodes[j], dx = a.x - b.x, dy = a.y - b.y, d = Math.sqrt(dx * dx + dy * dy);
+        var big = a.label || b.label, maxD = big ? 150 : 110;
+        if (d < maxD) {
+          ctx.globalAlpha = fade * (big ? 0.4 : 0.25) * (1 - d / maxD);
+          ctx.lineWidth = big ? 1.2 : 0.9;
+          ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke();
+        }
+      }
+    }
+    ctx.font = '500 12.5px "Schibsted Grotesk", "Helvetica Neue", Arial, sans-serif';
+    nodes.forEach(function (n) {
+      ctx.globalAlpha = fade * (n.kind === 'place' ? 0.95 : n.kind === 'work' ? 0.8 : 0.55);
+      ctx.fillStyle = colors.orange;
+      ctx.beginPath(); ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2); ctx.fill();
+      if (n.label && !narrow) {
+        ctx.globalAlpha = n.kind === 'place' ? 0.95 : 0.7;
+        ctx.fillStyle = colors.muted;
+        var txt = n.label, tw = ctx.measureText(txt).width;
+        ctx.fillText(txt, n.x + 10 + tw > W - 8 ? n.x - 10 - tw : n.x + 10, n.y + 4);
+      }
+    });
+    ctx.globalAlpha = 1;
+  }
+
+  function loop() { step(); draw(); raf = requestAnimationFrame(loop); }
+  function start() { readColors(); build(); cancelAnimationFrame(raf); if (reduce) draw(); else loop(); }
+
+  function point(x, y) { var r = hero.getBoundingClientRect(); mx = x - r.left; my = y - r.top; }
+  hero.addEventListener('mousemove', function (e) { point(e.clientX, e.clientY); });
+  hero.addEventListener('touchmove', function (e) { if (e.touches[0]) point(e.touches[0].clientX, e.touches[0].clientY); }, { passive: true });
+  hero.addEventListener('mouseleave', function () { mx = my = -9999; });
+  var t; window.addEventListener('resize', function () { clearTimeout(t); t = setTimeout(start, 150); });
+  if (window.matchMedia) {
+    var mq = window.matchMedia('(prefers-color-scheme: dark)');
+    if (mq.addEventListener) mq.addEventListener('change', function () { readColors(); if (reduce) draw(); });
+  }
+  new MutationObserver(function () { readColors(); if (reduce) draw(); }).observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { if (reduce) draw(); });
+  start();
+})();
+</script>
+
+<script>
+/* Spotlight on the tinker cards: a soft orange glow follows the cursor. */
+document.querySelectorAll('.tinker-list li').forEach(function (card) {
+  card.addEventListener('pointermove', function (e) {
+    var r = card.getBoundingClientRect();
+    card.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+    card.style.setProperty('--my', (e.clientY - r.top) + 'px');
+  });
+});
+
+/* A second, smaller network in the contact block, so the page ends where it started. */
+(function () {
+  var canvas = document.getElementById('net2'), host = document.getElementById('contact');
+  if (!canvas || !canvas.getContext) return;
+  var ctx = canvas.getContext('2d'), reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var W, H, nodes = [], mx = -9999, my = -9999, raf = 0, visible = false, ink = '#17171a';
+  function rand(a, b) { return a + Math.random() * (b - a); }
+  function build() {
+    var r = host.getBoundingClientRect(), dpr = Math.min(window.devicePixelRatio || 1, 2);
+    W = r.width; H = r.height; canvas.width = Math.round(W * dpr); canvas.height = Math.round(H * dpr);
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    ink = getComputedStyle(document.documentElement).getPropertyValue('--on-orange').trim() || ink;
+    nodes = [];
+    var count = Math.min(Math.floor(W * H / 14000), 50);
+    for (var i = 0; i < count; i++) nodes.push({ x: rand(0, W), y: rand(0, H), dx: rand(-0.1, 0.1), dy: rand(-0.1, 0.1), vx: 0, vy: 0, r: rand(1, 2.6) });
+  }
+  function frame() {
+    ctx.clearRect(0, 0, W, H);
+    nodes.forEach(function (n) {
+      if (!reduce) {
+        var ddx = mx - n.x, ddy = my - n.y, d = Math.sqrt(ddx * ddx + ddy * ddy);
+        if (d < 160 && d > 1) { var f = (160 - d) / 160; n.vx += ddx / d * f * 0.14; n.vy += ddy / d * f * 0.14; }
+        n.vx *= 0.95; n.vy *= 0.95; n.x += n.vx + n.dx; n.y += n.vy + n.dy;
+        if (n.x < -10) n.x = W + 10; else if (n.x > W + 10) n.x = -10;
+        if (n.y < -10) n.y = H + 10; else if (n.y > H + 10) n.y = -10;
+      }
+    });
+    ctx.strokeStyle = ink; ctx.fillStyle = ink;
+    for (var i = 0; i < nodes.length; i++) {
+      for (var j = i + 1; j < nodes.length; j++) {
+        var a = nodes[i], c = nodes[j], dx = a.x - c.x, dy = a.y - c.y, d = Math.sqrt(dx * dx + dy * dy);
+        if (d < 120) { ctx.globalAlpha = 0.16 * (1 - d / 120); ctx.lineWidth = 1; ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(c.x, c.y); ctx.stroke(); }
+      }
+      ctx.globalAlpha = 0.28; ctx.beginPath(); ctx.arc(nodes[i].x, nodes[i].y, nodes[i].r, 0, Math.PI * 2); ctx.fill();
+    }
+    ctx.globalAlpha = 1;
+    if (!reduce && visible) raf = requestAnimationFrame(frame);
+  }
+  function start() { build(); cancelAnimationFrame(raf); frame(); }
+  host.addEventListener('pointermove', function (e) { var r = host.getBoundingClientRect(); mx = e.clientX - r.left; my = e.clientY - r.top; });
+  host.addEventListener('pointerleave', function () { mx = my = -9999; });
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(function (es) { visible = es[0].isIntersecting; cancelAnimationFrame(raf); if (visible) frame(); }).observe(host);
+  } else { visible = true; }
+  var t; window.addEventListener('resize', function () { clearTimeout(t); t = setTimeout(start, 150); });
+  start();
+})();
+</script>
+
+<script>
+/* Little versions of the hero network beside each section heading. Each one wakes up when you hover the section. */
+(function () {
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  document.querySelectorAll('canvas.mini').forEach(function (cv, k) {
+    var ctx = cv.getContext && cv.getContext('2d'); if (!ctx) return;
+    var sec = cv.closest('section'), W = 180, H = 130, dpr = Math.min(window.devicePixelRatio || 1, 2), mx = -999, my = -999, raf = 0, on = false;
+    cv.width = W * dpr; cv.height = H * dpr; cv.style.width = W + 'px'; cv.style.height = H + 'px'; ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    var seed = 7 + k * 13; function rnd() { seed = (seed * 9301 + 49297) % 233280; return seed / 233280; }
+    var nodes = []; for (var i = 0; i < 12; i++) nodes.push({ x: 10 + rnd() * (W - 20), y: 10 + rnd() * (H - 20), dx: (rnd() - .5) * .25, dy: (rnd() - .5) * .25, vx: 0, vy: 0, r: i === 0 ? 4 : 1.4 + rnd() * 1.6 });
+    function col(n) { return getComputedStyle(document.documentElement).getPropertyValue(n).trim(); }
+    function draw() {
+      var o = col('--orange') || '#fe7e01';
+      ctx.clearRect(0, 0, W, H); ctx.strokeStyle = o; ctx.fillStyle = o;
+      for (var i = 0; i < nodes.length; i++) {
+        var a = nodes[i];
+        if (on && !reduce) {
+          var ddx = mx - a.x, ddy = my - a.y, d = Math.sqrt(ddx * ddx + ddy * ddy);
+          if (d < 70 && d > 1) { a.vx += ddx / d * .08; a.vy += ddy / d * .08; }
+          a.vx *= .94; a.vy *= .94; a.x += a.vx + a.dx; a.y += a.vy + a.dy;
+          if (a.x < 6 || a.x > W - 6) a.dx *= -1; if (a.y < 6 || a.y > H - 6) a.dy *= -1;
+          a.x = Math.max(4, Math.min(W - 4, a.x)); a.y = Math.max(4, Math.min(H - 4, a.y));
+        }
+        for (var j = i + 1; j < nodes.length; j++) {
+          var c = nodes[j], dd = Math.hypot(a.x - c.x, a.y - c.y);
+          if (dd < 70) { ctx.globalAlpha = .45 * (1 - dd / 70); ctx.lineWidth = 1; ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(c.x, c.y); ctx.stroke(); }
+        }
+      }
+      nodes.forEach(function (n, i) { ctx.globalAlpha = i === 0 ? 1 : .7; ctx.beginPath(); ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2); ctx.fill(); });
+      ctx.globalAlpha = 1;
+      if (on && !reduce) raf = requestAnimationFrame(draw);
+    }
+    sec.addEventListener('pointerenter', function () { on = true; cancelAnimationFrame(raf); draw(); });
+    sec.addEventListener('pointerleave', function () { on = false; mx = my = -999; });
+    sec.addEventListener('pointermove', function (e) { var r = cv.getBoundingClientRect(); mx = e.clientX - r.left; my = e.clientY - r.top; });
+    draw();
+    new MutationObserver(draw).observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+  });
+
+  /* Nav: an orange dot marks the section you're reading. */
+  var links = {}; document.querySelectorAll('.nav a').forEach(function (a) { links[a.getAttribute('href').slice(1)] = a; });
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (es) {
+      es.forEach(function (e) {
+        if (e.isIntersecting && links[e.target.id]) {
+          Object.keys(links).forEach(function (k) { links[k].classList.toggle('active', k === e.target.id); });
+        }
+      });
+    }, { rootMargin: '-45% 0px -50% 0px' });
+    document.querySelectorAll('section[id]').forEach(function (s) { io.observe(s); });
+  }
+})();
+</script>
+
+</body>
+</html>
